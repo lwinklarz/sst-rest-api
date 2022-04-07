@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
 #        node-version: [12.x, 14.x, 16.x]
-        node-version: [16.x]
+        node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -30,4 +30,8 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - run: npm run deploy -- --stage test --region eu-central-1
+    - name: Deploy to AWS
+      run: npm run deploy -- --stage test --region eu-central-1
+      env:
+        AMAZON_ACCESS_KEY_ID: ${{ secrets.AMAZON_ACCESS_KEY_ID }}
+        AMAZON_SECRET_ACCESS_KEY: ${{ secrets.AMAZON_SECRET_ACCESS_KEY }}
