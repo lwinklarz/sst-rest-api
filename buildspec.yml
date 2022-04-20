@@ -24,4 +24,6 @@ artifacts:
     - .build/**/*
     - .sst/*
     - stacks/**/*
+    - src/**/*
+    - test/**/*
     - buildspec-deploy.yml
