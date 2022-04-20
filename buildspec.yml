@@ -20,6 +20,7 @@ artifacts:
   files:
     - package.json
     - package-lock.json
+    - sst.json
     - .build/**/*
     - .sst/*
     - client/dist/*
