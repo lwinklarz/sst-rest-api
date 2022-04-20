@@ -6,6 +6,10 @@ phases:
       nodejs: 12
     commands:
       - npm install --silent --no-progress -g npm
+  pre_build:
+    commands:
+      - echo Install dependencies
+      - npm install
   build:
     commands:
       - npm run deploy -- --stage test --region eu-central-1
