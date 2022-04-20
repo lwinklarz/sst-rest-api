@@ -23,5 +23,5 @@ artifacts:
     - sst.json
     - .build/**/*
     - .sst/*
-    - client/dist/*
+    - stacks/**/*
     - buildspec-deploy.yml
